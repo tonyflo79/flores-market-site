@@ -1,0 +1,32 @@
+/* ============================================================
+   PHILOSOPHY — single-line italic pull-quote, centered
+   ============================================================ */
+
+.philosophy {
+  background: var(--ink);
+  color: var(--bone);
+  padding: var(--sp-8) var(--container-margin);
+  display: grid;
+  place-items: center;
+  text-align: center;
+}
+
+.philosophy__inner {
+  max-width: 920px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-5);
+  align-items: center;
+}
+
+.philosophy__rule {
+  width: 48px;
+  height: 1px;
+  background: var(--brass);
+  transform-origin: center;
+}
+
+.philosophy .pullquote {
+  color: var(--bone);
+  opacity: 0.92;
+}

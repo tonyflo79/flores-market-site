@@ -1,0 +1,90 @@
+/* ============================================================
+   LIGHTBOX
+   ============================================================ */
+
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(20, 17, 15, 0);
+  z-index: var(--z-lightbox);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: var(--sp-7) var(--container-margin);
+  backdrop-filter: blur(0);
+  -webkit-backdrop-filter: blur(0);
+  transition: background 400ms var(--ease-soft), backdrop-filter 400ms var(--ease-soft);
+}
+
+.lightbox.open {
+  display: flex;
+  background: rgba(20, 17, 15, 0.92);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+.lightbox__stage {
+  max-width: 88vw;
+  max-height: 82vh;
+  display: grid;
+  place-items: center;
+}
+
+.lightbox__stage picture,
+.lightbox__stage .lightbox__image {
+  display: block;
+}
+
+.lightbox__stage img {
+  max-width: 88vw;
+  max-height: 82vh;
+  object-fit: contain;
+  border-radius: var(--radius-sm);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.55);
+}
+
+.lightbox__close,
+.lightbox__prev,
+.lightbox__next {
+  position: absolute;
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  display: grid; place-items: center;
+  color: var(--bone);
+  border: 1px solid var(--mist);
+  background: rgba(20,17,15,0.6);
+  font-size: 24px;
+  transition: background var(--dur-fast) var(--ease-soft), border-color var(--dur-fast) var(--ease-soft);
+  cursor: pointer;
+}
+.lightbox__close { top: var(--sp-4); right: var(--sp-4); }
+.lightbox__prev  { left:  var(--sp-4); top: 50%; transform: translateY(-50%); }
+.lightbox__next  { right: var(--sp-4); top: 50%; transform: translateY(-50%); }
+
+.lightbox__close:hover,
+.lightbox__prev:hover,
+.lightbox__next:hover {
+  background: rgba(20,17,15,0.85);
+  border-color: var(--brass);
+}
+
+.lightbox__count {
+  position: absolute;
+  bottom: var(--sp-5);
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--ff-body);
+  font-size: var(--fs-micro);
+  letter-spacing: var(--track-micro);
+  text-transform: uppercase;
+  color: var(--brass);
+}
+
+@media (max-width: 767px) {
+  .lightbox__close,
+  .lightbox__prev,
+  .lightbox__next { width: 44px; height: 44px; }
+  .lightbox__prev  { left:  var(--sp-2); }
+  .lightbox__next  { right: var(--sp-2); }
+  .lightbox__close { top: var(--sp-3); right: var(--sp-3); }
+}

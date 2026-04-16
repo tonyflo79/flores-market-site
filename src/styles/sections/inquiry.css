@@ -1,0 +1,140 @@
+/* ============================================================
+   INQUIRY — form with bone 1px bottom-borders, brass focus
+   ============================================================ */
+
+.inquiry {
+  background: var(--ink);
+  color: var(--bone);
+}
+
+.inquiry__inner {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding: var(--section-gap-desktop) var(--container-margin);
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: var(--sp-8);
+  align-items: start;
+}
+
+.inquiry__intro {
+  max-width: 540px;
+}
+.inquiry__intro .display-l { margin-bottom: var(--sp-5); }
+.inquiry__intro .lead { opacity: 0.85; }
+
+.inquiry__form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-5);
+  max-width: 560px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.field__label {
+  font-size: var(--fs-micro);
+  letter-spacing: var(--track-micro);
+  text-transform: uppercase;
+  color: var(--brass);
+  font-weight: 500;
+}
+
+.field__input,
+.field__textarea,
+.field__select {
+  height: 48px;
+  padding: 0 0 var(--sp-2) 0;
+  color: var(--bone);
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid var(--mist);
+  font-family: var(--ff-body);
+  font-size: var(--fs-body);
+  line-height: 1.5;
+  transition: border-color var(--dur-med) var(--ease-soft);
+  width: 100%;
+}
+
+.field__input:focus,
+.field__textarea:focus,
+.field__select:focus {
+  outline: none;
+  border-bottom-color: var(--brass);
+}
+
+.field__textarea {
+  height: auto;
+  min-height: 120px;
+  padding: var(--sp-2) 0;
+  resize: vertical;
+  border: 1px solid var(--mist);
+  padding-inline: var(--sp-3);
+  border-radius: var(--radius-sm);
+}
+.field__textarea:focus { border-color: var(--brass); }
+
+.field__select {
+  appearance: none;
+  background-image:
+    linear-gradient(45deg, transparent 50%, var(--brass) 50%),
+    linear-gradient(135deg, var(--brass) 50%, transparent 50%);
+  background-position: right 4px center, right 10px center;
+  background-size: 6px 6px, 6px 6px;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.field__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--sp-4);
+}
+
+/* honeypot — hidden from users, visible to bots */
+.field--honey {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.submit {
+  height: 56px;
+  background: var(--brass);
+  color: var(--ink);
+  font-family: var(--ff-body);
+  font-size: var(--fs-micro);
+  letter-spacing: var(--track-micro);
+  text-transform: uppercase;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background var(--dur-med) var(--ease-soft);
+  border-radius: var(--radius-sm);
+  margin-top: var(--sp-3);
+}
+.submit:hover { background: #B79979; }
+.submit:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.form__status {
+  font-family: var(--ff-display);
+  font-style: italic;
+  font-size: var(--fs-pullquote);
+  color: var(--bone);
+  opacity: 0;
+  transition: opacity var(--dur-slow) var(--ease-soft);
+}
+.form__status.shown { opacity: 1; }
+
+@media (max-width: 1023px) {
+  .inquiry__inner { grid-template-columns: 1fr; gap: var(--sp-6); padding-block: var(--section-gap-tablet); }
+}
+@media (max-width: 767px) {
+  .inquiry__inner { padding-block: var(--section-gap-mobile); }
+  .field__row { grid-template-columns: 1fr; }
+}

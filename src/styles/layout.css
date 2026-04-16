@@ -1,0 +1,192 @@
+/* ============================================================
+   LAYOUT — containers, sections, grid helpers
+   ============================================================ */
+
+.container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding-inline: var(--container-margin);
+}
+
+.editorial {
+  max-width: var(--editorial-max);
+  margin-inline: auto;
+}
+
+.section {
+  padding-block: var(--section-gap-desktop);
+  padding-inline: var(--container-margin);
+  max-width: var(--container-max);
+  margin-inline: auto;
+}
+
+@media (max-width: 1023px) {
+  .section { padding-block: var(--section-gap-tablet); }
+}
+@media (max-width: 767px) {
+  .section { padding-block: var(--section-gap-mobile); }
+}
+
+/* Nav */
+.nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 72px;
+  z-index: var(--z-nav);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-inline: var(--container-margin);
+  color: var(--bone);
+  background: transparent;
+  transition: background var(--dur-med) var(--ease-soft),
+              backdrop-filter var(--dur-med) var(--ease-soft);
+}
+.nav.scrolled {
+  background: rgba(20, 17, 15, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+}
+.nav__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sp-2);
+}
+.nav__wordmark {
+  font-family: var(--ff-display);
+  font-size: 18px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-variation-settings: "opsz" 24, "SOFT" 30;
+}
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  font-size: var(--fs-micro);
+  letter-spacing: var(--track-micro);
+  text-transform: uppercase;
+}
+.nav__links a { position: relative; padding-block: var(--sp-1); }
+.nav__links a::after {
+  content: '';
+  position: absolute;
+  left: 0; right: 0; bottom: 0;
+  height: 1px;
+  background: var(--brass);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 280ms var(--ease-soft);
+}
+.nav__links a:hover::after { transform: scaleX(1); }
+
+.nav__cta {
+  border: 1px solid var(--brass);
+  padding: 10px 18px;
+  border-radius: var(--radius-sm);
+  transition: background var(--dur-med) var(--ease-soft),
+              color var(--dur-med) var(--ease-soft);
+}
+.nav__cta:hover {
+  background: var(--brass);
+  color: var(--ink);
+}
+.nav__cta::after { display: none; }
+
+@media (max-width: 767px) {
+  .nav { height: 56px; }
+  .nav__links { gap: 16px; font-size: 11px; }
+}
+
+/* Hero (minimal P0 — full build in P4) */
+.hero {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  align-items: flex-end;
+  padding: var(--container-margin);
+  padding-top: calc(72px + var(--sp-7));
+  position: relative;
+}
+.hero__text {
+  max-width: 780px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+  color: var(--bone);
+}
+.hero__text .eyebrow { color: var(--brass); }
+.hero__text .lead { max-width: 560px; opacity: 0.85; }
+
+/* Footer */
+.footer {
+  padding: var(--sp-7) var(--container-margin);
+  border-top: 1px solid var(--mist);
+  color: var(--bone);
+  opacity: 0.7;
+}
+
+/* Preloader (placeholder — P2 replaces with crest) */
+.preloader {
+  position: fixed; inset: 0;
+  background: var(--ink);
+  color: var(--bone);
+  display: grid; place-items: center;
+  z-index: var(--z-preloader);
+  transition: opacity 400ms var(--ease-soft), visibility 400ms;
+}
+.preloader.hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.preloader__mark {
+  font-family: var(--ff-display);
+  font-size: 48px;
+  letter-spacing: 0.2em;
+  font-variation-settings: "opsz" 48, "SOFT" 30;
+  opacity: 0.5;
+  animation: pulse 1.6s ease-in-out infinite;
+}
+@keyframes pulse {
+  0%, 100% { opacity: 0.3; }
+  50%      { opacity: 0.9; }
+}
+
+/* Grain overlay (P6 paints this via WebGL) */
+.grain {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: var(--z-grain);
+  mix-blend-mode: overlay;
+  opacity: 0.06;
+}
+@media (prefers-reduced-motion: reduce) {
+  .grain { display: none; }
+}
+
+/* Custom cursor (P5 wires behavior) */
+.cursor {
+  position: fixed;
+  top: 0; left: 0;
+  width: 8px; height: 8px;
+  background: var(--bone);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: var(--z-cursor);
+  mix-blend-mode: difference;
+  transform: translate3d(-100px, -100px, 0);
+  transition: width var(--dur-fast) var(--ease-soft),
+              height var(--dur-fast) var(--ease-soft),
+              background var(--dur-fast) var(--ease-soft);
+}
+.cursor.large {
+  width: 48px; height: 48px;
+  background: transparent;
+  border: 1px solid var(--bone);
+}
+@media (hover: none) {
+  .cursor { display: none; }
+}

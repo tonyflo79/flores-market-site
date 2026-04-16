@@ -1,0 +1,50 @@
+/* ============================================================
+   GALLERY — 3×2 tile grid. P7 adds WebGL hover + lightbox.
+   ============================================================ */
+
+.gallery {
+  background: var(--ink);
+  color: var(--bone);
+}
+
+.gallery__inner {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding: var(--section-gap-desktop) var(--container-margin);
+}
+
+.gallery__header {
+  margin-bottom: var(--sp-6);
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--sp-5);
+}
+
+.gallery__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.gallery__tile {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: var(--radius-sm);
+  background: var(--smoke);
+  cursor: zoom-in;
+}
+.gallery__tile img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 800ms var(--ease-expo-out);
+}
+.gallery__tile:hover img { transform: scale(1.03); }
+
+@media (max-width: 1023px) {
+  .gallery__grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 640px) {
+  .gallery__grid { grid-template-columns: 1fr; }
+}

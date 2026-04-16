@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 32" role="img" aria-label="The Flores Market">
+  <title>The Flores Market</title>
+  <!-- Text wordmark. Rendered at runtime with Fraunces if available, else serif fallback. -->
+  <text x="0" y="22"
+        font-family="'Fraunces Variable', Fraunces, Georgia, 'Times New Roman', serif"
+        font-weight="400"
+        font-size="16"
+        letter-spacing="4.3"
+        fill="currentColor"
+        style="font-variation-settings:'opsz' 24, 'SOFT' 30;">THE · FLORES · MARKET</text>
+</svg>

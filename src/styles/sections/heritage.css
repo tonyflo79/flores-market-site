@@ -1,0 +1,95 @@
+/* ============================================================
+   HERITAGE — Bert Flores, 1965, South LA
+   Only section with paper background. Body transitions to it.
+   ============================================================ */
+
+.heritage {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+.heritage__inner {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding: var(--section-gap-desktop) var(--container-margin);
+  display: grid;
+  grid-template-columns: 5fr 7fr;
+  gap: var(--sp-8);
+  align-items: start;
+}
+
+.heritage__stamp {
+  font-family: var(--ff-display);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--kraft);
+  font-size: clamp(88px, 14vw, 200px);
+  line-height: 0.9;
+  letter-spacing: -0.04em;
+  font-variation-settings: "opsz" 144, "SOFT" 100;
+  will-change: transform;
+}
+.heritage__stamp span { display: block; }
+.heritage__stamp span + span { margin-left: 0.4em; opacity: 0.6; }
+
+.heritage__body {
+  max-width: 540px;
+}
+
+.heritage__rule {
+  width: 80px;
+  height: 1px;
+  background: var(--kraft);
+  margin-bottom: var(--sp-5);
+  transform-origin: left center;
+}
+
+.heritage__eyebrow {
+  margin-bottom: var(--sp-4);
+  color: var(--kraft);
+}
+
+.heritage__headline {
+  color: var(--ink);
+  margin-bottom: var(--sp-5);
+}
+
+.heritage__body p {
+  font-size: 20px;
+  line-height: 1.55;
+  letter-spacing: -0.005em;
+  margin-bottom: var(--sp-4);
+}
+
+.heritage__body .emphasis {
+  color: var(--sangre);
+  font-variation-settings: "opsz" 48, "SOFT" 100;
+}
+
+.heritage__crest-photo {
+  margin-top: var(--sp-7);
+  max-width: 360px;
+}
+
+.heritage__crest-photo img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+}
+
+.heritage__crest-caption {
+  margin-top: var(--sp-2);
+  font-size: var(--fs-small);
+  color: var(--kraft);
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 1023px) {
+  .heritage__inner { grid-template-columns: 1fr; gap: var(--sp-6); padding-block: var(--section-gap-tablet); }
+  .heritage__stamp { font-size: clamp(72px, 18vw, 120px); }
+}
+@media (max-width: 767px) {
+  .heritage__inner { padding-block: var(--section-gap-mobile); }
+  .heritage__body p { font-size: 18px; }
+}

@@ -1,0 +1,101 @@
+/* ============================================================
+   TYPOGRAPHY — Fraunces (display) + General Sans (body)
+   ============================================================ */
+
+/* Fraunces is loaded via @fontsource-variable/fraunces in main.js.
+   General Sans is loaded from Fontshare (will be self-hosted in optimization pass). */
+
+@import url('https://api.fontshare.com/v2/css?f[]=general-sans@400,500,600&display=swap');
+
+/* Body default */
+body {
+  font-family: var(--ff-body);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  font-weight: 400;
+  letter-spacing: var(--track-body);
+}
+
+/* ---------- UTILITY CLASSES ---------- */
+
+.display-xl,
+.display-l,
+.display-m,
+.pullquote {
+  font-family: var(--ff-display);
+  font-weight: 400;
+  font-style: normal;
+  /* Fraunces variable axes */
+  font-variation-settings: "opsz" 96, "SOFT" 50;
+}
+
+.display-xl {
+  font-size: var(--fs-display-xl);
+  line-height: var(--lh-display-xl);
+  letter-spacing: var(--track-display-xl);
+  font-variation-settings: "opsz" 144, "SOFT" 50;
+}
+
+.display-l {
+  font-size: var(--fs-display-l);
+  line-height: var(--lh-display-l);
+  letter-spacing: var(--track-display-l);
+  font-variation-settings: "opsz" 96, "SOFT" 30;
+}
+
+.display-m {
+  font-size: var(--fs-display-m);
+  line-height: var(--lh-display-m);
+  letter-spacing: var(--track-display-m);
+  font-variation-settings: "opsz" 48, "SOFT" 20;
+}
+
+.pullquote {
+  font-family: var(--ff-display);
+  font-style: italic;
+  font-weight: 300;
+  font-size: var(--fs-pullquote);
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  font-variation-settings: "opsz" 96, "SOFT" 100;
+}
+
+.lead {
+  font-family: var(--ff-body);
+  font-size: var(--fs-body-l);
+  line-height: var(--lh-body-l);
+  letter-spacing: -0.005em;
+  font-weight: 400;
+}
+
+.eyebrow,
+.micro {
+  font-family: var(--ff-body);
+  font-size: var(--fs-micro);
+  line-height: var(--lh-micro);
+  letter-spacing: var(--track-micro);
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.numeric {
+  font-family: var(--ff-display);
+  font-style: italic;
+  font-variation-settings: "opsz" 9;
+  font-size: var(--fs-numeric);
+  font-feature-settings: "tnum" on;
+  letter-spacing: 0.05em;
+}
+
+.emphasis {
+  color: var(--color-emphasis);
+  font-family: var(--ff-display);
+  font-style: italic;
+  font-variation-settings: "opsz" 24, "SOFT" 100;
+}
+
+/* Selection */
+::selection {
+  background: var(--brass);
+  color: var(--ink);
+}

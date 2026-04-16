@@ -1,0 +1,85 @@
+/* ============================================================
+   CHEF'S JOURNEY — sticky left column + scrolling beats right
+   ============================================================ */
+
+.journey {
+  background: var(--ink);
+  color: var(--bone);
+}
+
+.journey__inner {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding: var(--section-gap-desktop) var(--container-margin);
+  display: grid;
+  grid-template-columns: 4fr 7fr;
+  gap: var(--sp-8);
+}
+
+.journey__aside {
+  position: sticky;
+  top: 120px;
+  align-self: start;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-5);
+}
+
+.journey__portrait {
+  width: 100%;
+  max-width: 320px;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border: 1px solid var(--mist);
+  border-radius: var(--radius-md);
+}
+.journey__portrait img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  filter: grayscale(0.15) contrast(1.02);
+}
+
+.journey__headline {
+  margin-bottom: var(--sp-7);
+}
+
+.journey__beats {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-8);
+}
+
+.journey__beat {
+  max-width: 560px;
+}
+
+.journey__beat .numeric {
+  color: var(--brass);
+  margin-bottom: var(--sp-2);
+  display: block;
+}
+
+.journey__beat h3 {
+  font-family: var(--ff-display);
+  font-size: var(--fs-display-m);
+  line-height: var(--lh-display-m);
+  letter-spacing: var(--track-display-m);
+  font-weight: 400;
+  font-variation-settings: "opsz" 48, "SOFT" 20;
+  margin-bottom: var(--sp-3);
+}
+
+.journey__beat p {
+  font-size: var(--fs-body-l);
+  line-height: var(--lh-body-l);
+  opacity: 0.82;
+}
+
+@media (max-width: 1023px) {
+  .journey__inner { grid-template-columns: 1fr; gap: var(--sp-6); padding-block: var(--section-gap-tablet); }
+  .journey__aside { position: static; }
+}
+@media (max-width: 767px) {
+  .journey__inner { padding-block: var(--section-gap-mobile); }
+  .journey__beats { gap: var(--sp-6); }
+}

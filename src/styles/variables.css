@@ -1,0 +1,124 @@
+/* ============================================================
+   DESIGN TOKENS — The Flores Market
+   Source of truth: BUILD-SPEC.md §4–6
+   ============================================================ */
+
+:root {
+  /* ---------- COLOR ---------- */
+  --ink:      #14110F;  /* warm near-black, primary bg */
+  --bone:     #F2EDE4;  /* cream, primary text on ink */
+  --paper:    #E8DFD0;  /* old-photo cream, Heritage bg */
+  --sangre:   #5C1F1B;  /* oxblood, butcher accent */
+  --brass:    #A0845C;  /* warm gold, CTA + nav accent */
+  --kraft:    #8A7355;  /* paper brown, borders + rules */
+  --smoke:    #2A2522;  /* elevated surface on ink */
+  --mist:     rgba(242, 237, 228, 0.08); /* hairline dividers */
+
+  /* Semantic */
+  --color-bg:       var(--ink);
+  --color-fg:       var(--bone);
+  --color-accent:   var(--brass);
+  --color-rule:     var(--kraft);
+  --color-emphasis: var(--sangre);
+
+  /* Transitions for theme/bg swaps */
+  --page-bg:             var(--ink);
+  --page-fg:             var(--bone);
+  --page-bg-transition:  600ms ease-in-out;
+
+  /* ---------- TYPOGRAPHY ---------- */
+  --ff-display:  'Fraunces Variable', 'Fraunces', 'Iowan Old Style', 'Palatino Linotype', 'Georgia', serif;
+  --ff-body:     'General Sans', 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  /* Type scale (desktop) */
+  --fs-display-xl:   clamp(64px, 8vw, 112px);
+  --fs-display-l:    clamp(44px, 5.2vw, 72px);
+  --fs-display-m:    clamp(32px, 3.2vw, 44px);
+  --fs-pullquote:    clamp(26px, 2.6vw, 36px);
+  --fs-body-l:       clamp(18px, 1.5vw, 20px);
+  --fs-body:         17px;
+  --fs-small:        14px;
+  --fs-micro:        12px;
+  --fs-numeric:      14px;
+
+  --lh-display-xl:   0.92;
+  --lh-display-l:    0.98;
+  --lh-display-m:    1.05;
+  --lh-body-l:       1.55;
+  --lh-body:         1.6;
+  --lh-micro:        1.2;
+
+  --track-display-xl: -0.035em;
+  --track-display-l:  -0.025em;
+  --track-display-m:  -0.015em;
+  --track-body:       0;
+  --track-micro:      0.18em;
+
+  /* ---------- SPACING (8px base unit) ---------- */
+  --sp-0:   0;
+  --sp-1:   4px;
+  --sp-2:   8px;
+  --sp-3:   16px;
+  --sp-4:   24px;
+  --sp-5:   32px;
+  --sp-6:   48px;
+  --sp-7:   64px;
+  --sp-8:   96px;
+  --sp-9:   128px;
+  --sp-10:  160px;
+
+  --section-gap-desktop: 160px;
+  --section-gap-tablet:  112px;
+  --section-gap-mobile:  80px;
+
+  /* ---------- LAYOUT ---------- */
+  --container-max:       1440px;
+  --container-margin:    64px;
+  --container-margin-t:  40px;
+  --container-margin-m:  20px;
+  --grid-cols:           12;
+  --grid-gutter:         24px;
+  --editorial-max:       780px;
+
+  /* ---------- RADII + SHADOWS ---------- */
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --shadow-soft: 0 8px 32px rgba(0,0,0,0.28);
+
+  /* ---------- MOTION ---------- */
+  --ease-expo-out:    cubic-bezier(0.19, 1, 0.22, 1);
+  --ease-power3-out:  cubic-bezier(0.215, 0.61, 0.355, 1);
+  --ease-soft:        cubic-bezier(0.2, 0.8, 0.2, 1);
+  --dur-fast:         180ms;
+  --dur-med:          280ms;
+  --dur-slow:         600ms;
+  --dur-reveal:       1100ms;
+
+  /* ---------- Z-INDEX ---------- */
+  --z-preloader: 100;
+  --z-nav:        50;
+  --z-cursor:    200;
+  --z-grain:      20;
+  --z-lightbox:  150;
+}
+
+/* Tablet overrides */
+@media (max-width: 1023px) {
+  :root {
+    --container-margin: var(--container-margin-t);
+    --grid-cols: 8;
+    --grid-gutter: 20px;
+  }
+}
+
+/* Mobile overrides */
+@media (max-width: 767px) {
+  :root {
+    --container-margin: var(--container-margin-m);
+    --grid-cols: 4;
+    --grid-gutter: 16px;
+    --fs-display-xl: clamp(40px, 11vw, 64px);
+    --fs-display-l:  clamp(32px, 8vw, 48px);
+    --fs-display-m:  clamp(26px, 6vw, 36px);
+  }
+}

@@ -1,0 +1,108 @@
+/* ============================================================
+   SERVICES — 2×2 card grid, full-bleed imagery, gradient overlay
+   P7 swaps the <img> backgrounds for Three.js hover shader planes.
+   ============================================================ */
+
+.services {
+  background: var(--ink);
+  color: var(--bone);
+}
+
+.services__inner {
+  max-width: var(--container-max);
+  margin-inline: auto;
+  padding: var(--section-gap-desktop) var(--container-margin);
+}
+
+.services__header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  margin-bottom: var(--sp-7);
+  gap: var(--sp-5);
+  flex-wrap: wrap;
+}
+
+.services__header p {
+  max-width: 420px;
+  opacity: 0.75;
+  font-size: var(--fs-body);
+}
+
+.services__grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--sp-4);
+}
+
+.service-card {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  isolation: isolate;
+  background: var(--smoke);
+  display: block;
+  color: var(--bone);
+}
+
+.service-card__media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.service-card__media img {
+  width: 100%; height: 100%;
+  object-fit: cover;
+  transition: transform 900ms var(--ease-expo-out);
+}
+
+.service-card::after {
+  content: '';
+  position: absolute; left: 0; right: 0; bottom: 0;
+  height: 60%;
+  background: linear-gradient(180deg, transparent 0%, rgba(20,17,15,0.9) 100%);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.service-card__body {
+  position: absolute;
+  left: var(--sp-5); right: var(--sp-5); bottom: var(--sp-5);
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.service-card__title {
+  font-family: var(--ff-display);
+  font-size: var(--fs-display-m);
+  line-height: var(--lh-display-m);
+  letter-spacing: var(--track-display-m);
+  font-weight: 400;
+  font-variation-settings: "opsz" 48, "SOFT" 20;
+}
+
+.service-card__desc {
+  font-size: var(--fs-body);
+  opacity: 0.85;
+  max-width: 36ch;
+}
+
+.service-card__arrow {
+  display: inline-block;
+  color: var(--brass);
+  font-size: 28px;
+  line-height: 1;
+  margin-top: var(--sp-3);
+  transition: transform var(--dur-med) var(--ease-expo-out);
+}
+
+.service-card:hover .service-card__media img { transform: scale(1.04); }
+.service-card:hover .service-card__arrow { transform: translateX(8px); }
+
+@media (max-width: 767px) {
+  .services__grid { grid-template-columns: 1fr; }
+  .service-card { aspect-ratio: 4 / 5; }
+}

@@ -1,0 +1,20 @@
+/* ============================================================
+   THE FLORES MARKET — Main stylesheet entry
+   Order matters: tokens → reset → typography → layout → sections
+   ============================================================ */
+
+@import './variables.css';
+@import './reset.css';
+@import './typography.css';
+@import './layout.css';
+
+/* Sections */
+@import './sections/hero.css';
+@import './sections/heritage.css';
+@import './sections/journey.css';
+@import './sections/philosophy.css';
+@import './sections/services.css';
+@import './sections/gallery.css';
+@import './sections/inquiry.css';
+@import './sections/footer.css';
+@import './sections/lightbox.css';

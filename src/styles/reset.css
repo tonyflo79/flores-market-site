@@ -1,0 +1,83 @@
+/* Opinionated modern reset */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+* { margin: 0; padding: 0; }
+
+html {
+  -webkit-text-size-adjust: 100%;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  scroll-behavior: auto; /* Lenis takes over */
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100svh;
+  line-height: 1.5;
+  background: var(--page-bg);
+  color: var(--page-fg);
+  transition: background var(--page-bg-transition), color var(--page-bg-transition);
+  font-family: var(--ff-body);
+  overflow-x: hidden;
+}
+
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+img { height: auto; }
+
+input, button, textarea, select {
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: none;
+}
+
+button { cursor: pointer; }
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+p, h1, h2, h3, h4, h5, h6 { overflow-wrap: break-word; }
+
+ul, ol { list-style: none; }
+
+/* Respect user motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Hide until fonts loaded to avoid FOUT flash */
+html:not(.fonts-loaded) body { opacity: 0; }
+html.fonts-loaded body { opacity: 1; transition: opacity 240ms ease-out; }
+
+/* Skip link */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: var(--sp-3);
+  padding: var(--sp-2) var(--sp-3);
+  background: var(--bone);
+  color: var(--ink);
+  z-index: 1000;
+  font-size: var(--fs-small);
+  border-radius: var(--radius-sm);
+}
+.skip-link:focus-visible { top: var(--sp-3); }
+
+/* Visible focus rings everywhere */
+:focus-visible {
+  outline: 2px solid var(--brass);
+  outline-offset: 3px;
+}

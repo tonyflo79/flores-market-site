@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 240" role="img" aria-label="The Flores Market crest">
+  <title>The Flores Market</title>
+  <!--
+    Hand-drawn heritage butcher-shop crest inspired by the original hat patch on
+    Marcus's FLORES MARKET snapback. Shield + top banner + bottom banner + portrait silhouette.
+    Single color (currentColor) so it can be rendered bone-on-ink or ink-on-paper.
+  -->
+  <g fill="currentColor" fill-rule="evenodd">
+
+    <!-- Top banner: FLORES -->
+    <path d="M20 30 L40 16 L160 16 L180 30 L168 44 L180 58 L160 44 L40 44 L20 58 L32 44 Z"/>
+    <text x="100" y="38" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif"
+          font-size="16" font-weight="700" letter-spacing="4" fill="#14110F">FLORES</text>
+
+    <!-- Shield body -->
+    <path d="M40 52 L160 52 L160 140 C160 170 135 190 100 210 C65 190 40 170 40 140 Z"
+          fill="none" stroke="currentColor" stroke-width="4"/>
+
+    <!-- Inner shield bevel -->
+    <path d="M50 62 L150 62 L150 138 C150 164 128 182 100 198 C72 182 50 164 50 138 Z"
+          fill="none" stroke="currentColor" stroke-width="1.5"/>
+
+    <!-- Portrait silhouette (Bert) — bust in profile -->
+    <g transform="translate(100 130)">
+      <!-- Shoulders -->
+      <path d="M-34 40 C-34 20 -20 10 0 10 C20 10 34 20 34 40 L34 50 L-34 50 Z"/>
+      <!-- Neck -->
+      <rect x="-8" y="-2" width="16" height="14"/>
+      <!-- Head -->
+      <ellipse cx="0" cy="-22" rx="20" ry="24"/>
+      <!-- Hat -->
+      <path d="M-24 -32 L24 -32 L22 -42 L-22 -42 Z"/>
+      <path d="M-28 -30 L28 -30 L28 -26 L-28 -26 Z"/>
+      <!-- Mustache cutout (drawn as contrast ellipse over head) -->
+      <path d="M-10 -10 Q0 -6 10 -10 Q8 -4 0 -3 Q-8 -4 -10 -10 Z" fill="#14110F"/>
+    </g>
+
+    <!-- Bottom banner: MARKET -->
+    <path d="M30 186 L50 172 L150 172 L170 186 L158 200 L170 214 L150 200 L50 200 L30 214 L42 200 Z"/>
+    <text x="100" y="194" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif"
+          font-size="16" font-weight="700" letter-spacing="4" fill="#14110F">MARKET</text>
+
+    <!-- Flanking ornamental marks (butcher's cleaver nods) -->
+    <g opacity="0.9">
+      <rect x="14" y="116" width="2" height="12"/>
+      <rect x="184" y="116" width="2" height="12"/>
+    </g>
+
+  </g>
+</svg>

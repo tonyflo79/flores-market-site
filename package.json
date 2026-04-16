@@ -1,0 +1,27 @@
+{
+  "name": "flores-market-site",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "The Flores Market — Chef Marcus Flores private catering website",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "build:images": "node scripts/build-images.mjs"
+  },
+  "dependencies": {
+    "gsap": "^3.12.5",
+    "lenis": "^1.1.13",
+    "split-type": "^0.3.4",
+    "three": "^0.168.0"
+  },
+  "devDependencies": {
+    "@fontsource-variable/fraunces": "^5.1.0",
+    "sharp": "^0.33.5",
+    "vite": "^5.4.10"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
