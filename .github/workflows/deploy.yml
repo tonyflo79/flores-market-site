@@ -26,8 +26,8 @@ jobs:
       - run: npm ci
       - name: Build
         run: npm run build
-        env:
-          DEPLOY_TARGET: gh-pages
+        # Custom domain thefloresmarket.com → base is '/' (vite default).
+        # Leave DEPLOY_TARGET unset so vite.config.js uses root base.
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
