@@ -115,11 +115,11 @@ export class HeroScene {
   _tick() {
     if (this._hidden) { requestAnimationFrame(() => this._tick()); return; }
 
-    // Lerp mouse
-    this.mouse.x += (this.targetMouse.x - this.mouse.x) * 0.12;
-    this.mouse.y += (this.targetMouse.y - this.mouse.y) * 0.12;
+    // Lerp mouse — slightly faster for spotlight responsiveness.
+    this.mouse.x += (this.targetMouse.x - this.mouse.x) * 0.18;
+    this.mouse.y += (this.targetMouse.y - this.mouse.y) * 0.18;
     // Decay intensity toward idle
-    this.intensity *= 0.94;
+    this.intensity *= 0.93;
 
     const t = this.clock.getElapsedTime();
     this.material.uniforms.uTime.value = t;

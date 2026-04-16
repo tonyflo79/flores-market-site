@@ -65,8 +65,13 @@
 }
 
 .hero__text .eyebrow { color: var(--brass); }
-.hero__text .display-xl { max-width: 10ch; }
+.hero__text .display-xl { max-width: none; }
 .hero__text .lead { max-width: 560px; opacity: 0.88; }
+
+/* Each sentence on its own visual block — the two sentences stack symmetrically. */
+.headline-line {
+  display: block;
+}
 
 .hero__ctas {
   display: flex;
