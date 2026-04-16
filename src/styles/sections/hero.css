@@ -68,9 +68,14 @@
 .hero__text .display-xl { max-width: none; }
 .hero__text .lead { max-width: 560px; opacity: 0.88; }
 
-/* Each sentence on its own visual block — the two sentences stack symmetrically. */
+/* Each visual line on its own block row — 4 stacked lines:
+   "A Family" / "Name." / "A Family" / "Kitchen." */
 .headline-line {
   display: block;
+}
+/* Tiny breath between the two sentences (between "Name." and "A Family"). */
+.headline-line--break {
+  margin-top: 0.08em;
 }
 
 .hero__ctas {
