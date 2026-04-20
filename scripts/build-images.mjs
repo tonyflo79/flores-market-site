@@ -26,19 +26,20 @@ const OUT_DIR = path.resolve(__dirname, '../src/assets/images');
 const WIDTHS = [480, 768, 1280, 1920, 2560];
 
 // Map source filename → semantic slug used across HTML/CSS.
+// Filenames read from ~/Desktop/Pics/.
 const MAP = {
-  'IMG_2125.jpeg': 'hero-sushi-platter',
-  'IMG_3225.jpeg': 'signature-nigiri',
-  'IMG_0017.JPG':  'ikura-macro',
-  'IMG_8854.jpg':  'crowned-nigiri',
-  'IMG_5224.jpg':  'single-nigiri-detail',
-  'IMG_2164.jpeg': 'event-overhead',
-  '8CB18D90-CE0D-44B8-8C5D-64A94B0B068Fmatson Capital-276.JPEG': 'chef-action',
-  'IMG_2840.jpg':  'chef-portrait',
+  'HeroImage.JPG':                                                'hero-sushi-platter',
+  'MarcusBio-Wabisabi.jpg':                                       'chef-portrait',
+  'sashimi-slate.png':                                            'signature-nigiri',
+  'IMG_3225.jpeg':                                                'ikura-macro',
+  'IMG_2125.jpeg':                                                'crowned-nigiri',
+  'IMG_5224.jpg':                                                 'single-nigiri-detail',
+  'IMG_2164.jpeg':                                                'event-overhead',
+  '8CB18D90-CE0D-44B8-8C5D-64A94B0B068Fmatson Capital-276.JPEG':  'chef-action',
 };
 
-// Hero gets an additional mobile crop (centered, sushi platter focus).
-const HERO_MOBILE = { source: 'IMG_2125.jpeg', slug: 'hero-sushi-platter-mobile', crop: 'centered' };
+// Hero gets an additional mobile crop (centered).
+const HERO_MOBILE = { source: 'HeroImage.JPG', slug: 'hero-sushi-platter-mobile', crop: 'centered' };
 
 async function ensureDir(dir) { await fs.mkdir(dir, { recursive: true }); }
 
