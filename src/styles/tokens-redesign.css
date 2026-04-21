@@ -1,0 +1,74 @@
+/* ============================================================
+   MASA-MINIMAL REDESIGN TOKENS — The Flores Market
+   Palette, type, motion tokens extracted from approved comps.
+   ============================================================ */
+
+:root {
+  /* ---------- COLOR ---------- */
+  --ink:    #14110f;
+  --cream:  #f4f1ec;
+  --paper:  #efeae2;
+  --muted:  #6b615a;
+  --body:   #3a332e;
+  --rule:   rgba(20, 17, 15, 0.20);
+  --rule-strong: rgba(20, 17, 15, 0.44);
+  --rule-dark:   rgba(244, 241, 236, 0.14);
+
+  /* Semantic */
+  --page-bg: var(--cream);
+  --page-fg: var(--ink);
+
+  /* ---------- TYPE ---------- */
+  --ff-display: 'Fraunces', 'Iowan Old Style', Georgia, serif;
+  --ff-body:    'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+
+  /* Display opsz/SOFT axes */
+  --fvs-display:  "opsz" 144, "SOFT" 50;
+  --fvs-display-soft30: "opsz" 144, "SOFT" 30;
+  --fvs-display-soft40: "opsz" 144, "SOFT" 40;
+  --fvs-display-soft60: "opsz" 144, "SOFT" 60;
+
+  /* Letter-spacing (small-caps / eyebrow tracking) */
+  --track-eyebrow:   0.45em;
+  --track-nav:       0.42em;
+  --track-link:      0.32em;
+  --track-display:  -0.025em;
+
+  /* ---------- SPACING ---------- */
+  --sp-2:  8px;
+  --sp-3: 16px;
+  --sp-4: 24px;
+  --sp-5: 32px;
+  --sp-6: 48px;
+  --sp-7: 64px;
+  --sp-8: 96px;
+  --sp-9: 128px;
+  --sp-10: 160px;
+
+  /* ---------- LAYOUT ---------- */
+  --container-margin: 56px;
+  --section-gap: 140px;
+
+  /* ---------- MOTION ---------- */
+  --dur-fade: 700ms;
+  --ease-soft: cubic-bezier(0.2, 0.8, 0.2, 1);
+
+  /* ---------- Z-INDEX ---------- */
+  --z-nav: 50;
+}
+
+/* Tablet */
+@media (max-width: 1023px) {
+  :root {
+    --container-margin: 40px;
+    --section-gap: 100px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  :root {
+    --container-margin: 24px;
+    --section-gap: 72px;
+  }
+}

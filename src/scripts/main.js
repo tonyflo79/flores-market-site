@@ -1,46 +1,59 @@
 /*
- * THE FLORES MARKET — Client bootstrap
+ * THE FLORES MARKET — Minimal client bootstrap
+ * Redesign: fades only, no parallax, no smooth-scroll, no cursor.
  */
 
-import '@fontsource-variable/fraunces';
-import { initPreloader } from './preloader.js';
-import { initSmoothScroll } from './scroll/lenis-init.js';
-import { initReveals } from './scroll/reveals.js';
-import { initCursor } from './cursor.js';
-import { initNav } from './nav.js';
-import { initForm } from './form.js';
-import { initLightbox } from './lightbox.js';
-import { HeroScene } from './webgl/HeroScene.js';
-import { GrainOverlay } from './webgl/GrainOverlay.js';
-
-// Mark fonts loaded (body fade-in gate)
+// Mark fonts loaded (body fade-in gate defined in reset.css)
 const markFontsLoaded = () => document.documentElement.classList.add('fonts-loaded');
 if ('fonts' in document) {
   Promise.all([
-    document.fonts.load('1em "Fraunces Variable"'),
-    document.fonts.load('400 1em "General Sans"'),
+    document.fonts.load('italic 300 1em "Fraunces"'),
+    document.fonts.load('400 1em "Inter"'),
   ]).then(markFontsLoaded).catch(markFontsLoaded);
 } else {
   markFontsLoaded();
 }
 
-initNav();
-initCursor();
-initForm();
+// Fade-in reveals via IntersectionObserver
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const revealTargets = document.querySelectorAll('[data-reveal]');
+if (prefersReducedMotion || !('IntersectionObserver' in window)) {
+  revealTargets.forEach((el) => el.classList.add('is-visible'));
+} else {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -10% 0px' });
+  revealTargets.forEach((el) => io.observe(el));
+}
 
-// Wait for preloader + fonts before wiring scroll + reveals to prevent
-// early-computed ScrollTrigger positions against hidden body.
-window.addEventListener('load', async () => {
-  await initPreloader();
-  initSmoothScroll();
-  initReveals();
-
-  // WebGL layer — hero shader + grain overlay.
-  const heroEl = document.querySelector('.hero');
-  if (heroEl) new HeroScene(heroEl);
-
-  const grainEl = document.querySelector('[data-grain]');
-  if (grainEl) new GrainOverlay(grainEl);
-
-  initLightbox();
-});
+// Inquiry form — Formspree submit with inline status
+const form = document.querySelector('[data-form]');
+if (form) {
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const status = form.querySelector('[data-form-status]');
+    const honey = form.querySelector('input[name="website"]');
+    if (honey && honey.value) return; // bot
+    if (status) status.textContent = 'Sending…';
+    try {
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { Accept: 'application/json' },
+      });
+      if (res.ok) {
+        form.reset();
+        if (status) status.textContent = 'Received. The chef will be in touch.';
+      } else {
+        if (status) status.textContent = 'Something went wrong. Email chef@thefloresmarket.com.';
+      }
+    } catch {
+      if (status) status.textContent = 'Network error. Email chef@thefloresmarket.com.';
+    }
+  });
+}

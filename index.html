@@ -5,18 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="theme-color" content="#14110F" />
   <title>The Flores Market — Private Catering by Chef Marcus Flores</title>
-  <meta name="description" content="Tailored private catering by Chef Marcus Flores. Multicourse plated dinners, omakase, and sushi experiences built for the occasion." />
+  <meta name="description" content="Private catering by Chef Marcus Flores. Multicourse dinners, omakase, and sushi service for private tables and events across Los Angeles. By invitation." />
 
   <meta property="og:title" content="The Flores Market" />
-  <meta property="og:description" content="Tailored private catering by Chef Marcus Flores." />
+  <meta property="og:description" content="Private catering by Chef Marcus Flores. By invitation." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="/og-image.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
-
-  <link rel="preconnect" href="https://api.fontshare.com" crossorigin />
-  <link rel="preload" as="image" href="/src/assets/images/hero-sushi-platter-1920w.avif" type="image/avif" />
 
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
@@ -24,21 +21,18 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
   <link rel="manifest" href="/site.webmanifest" />
 
+  <!-- Fonts: Fraunces (variable italic) + Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..500,30..100;1,9..144,300..500,30..100&family=Inter:wght@300;400;500&display=swap" />
+
+  <link rel="preload" as="image" href="/src/assets/images/crowned-nigiri-graded.jpg" />
   <link rel="stylesheet" href="/src/styles/main.css" />
 </head>
-<body data-theme="ink">
+<body>
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- Preloader (P2 crest placeholder — real stroke animation in P5) -->
-  <div class="preloader" aria-hidden="true" data-preloader>
-    <div class="preloader__mark">
-      <svg viewBox="0 0 200 240" width="96" height="115" style="color: var(--bone);">
-        <use href="#crest-use"/>
-      </svg>
-    </div>
-  </div>
-
-  <!-- Inlined crest SVG for reuse (nav, preloader, footer) -->
+  <!-- Reusable crest SVG -->
   <svg width="0" height="0" style="position:absolute" aria-hidden="true">
     <defs>
       <symbol id="crest-use" viewBox="0 0 200 240">
@@ -60,380 +54,219 @@
   </svg>
 
   <!-- ================================ NAV ================================ -->
-  <header class="nav" data-nav>
-    <a class="nav__brand" href="#top" data-cursor="large" aria-label="The Flores Market home">
-      <svg viewBox="0 0 200 240" width="28" height="34" style="color: var(--bone);">
-        <use href="#crest-use"/>
-      </svg>
-      <span class="nav__wordmark">The Flores Market</span>
+  <header class="nav" aria-label="Primary">
+    <a class="nav__brand" href="#top" aria-label="The Flores Market home">
+      <span class="nav__wordmark">THE · FLORES · MARKET</span>
     </a>
     <nav class="nav__links" aria-label="Primary">
-      <a href="#story" data-cursor="large">Story</a>
-      <a href="#services" data-cursor="large">Services</a>
-      <a href="#gallery" data-cursor="large">Gallery</a>
-      <a href="#inquire" class="nav__cta" data-cursor="large">Inquire</a>
+      <a href="#story">Story</a>
+      <a href="#experience">Experience</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#inquire">Inquire</a>
     </nav>
   </header>
 
   <main id="main">
 
-    <!-- ============================== HERO ============================== -->
+    <!-- ============================== HERO (Centered) ============================== -->
     <section id="top" class="hero">
       <div class="hero__media" aria-hidden="true">
-        <picture>
-          <source type="image/avif"
-                  srcset="/src/assets/images/hero-sushi-platter-480w.avif 480w,
-                          /src/assets/images/hero-sushi-platter-768w.avif 768w,
-                          /src/assets/images/hero-sushi-platter-1280w.avif 1280w,
-                          /src/assets/images/hero-sushi-platter-1920w.avif 1920w,
-                          /src/assets/images/hero-sushi-platter-2016w.avif 2016w"
-                  sizes="100vw" />
-          <source type="image/webp"
-                  srcset="/src/assets/images/hero-sushi-platter-480w.webp 480w,
-                          /src/assets/images/hero-sushi-platter-768w.webp 768w,
-                          /src/assets/images/hero-sushi-platter-1280w.webp 1280w,
-                          /src/assets/images/hero-sushi-platter-1920w.webp 1920w,
-                          /src/assets/images/hero-sushi-platter-2016w.webp 2016w"
-                  sizes="100vw" />
-          <img src="/src/assets/images/hero-sushi-platter-1920w.jpg"
-               alt="Sushi plated on wood, topped with caviar, uni, and gold leaf."
-               fetchpriority="high" />
-        </picture>
+        <img src="/src/assets/images/crowned-nigiri-graded.jpg" alt="" fetchpriority="high" />
       </div>
-      <!-- P6 replaces hero__media with a canvas-driven WebGL shader -->
-      <canvas class="hero__canvas" data-hero-canvas aria-hidden="true"></canvas>
+      <div class="hero__overlay" aria-hidden="true"></div>
 
       <div class="hero__inner">
-        <div class="hero__text">
-          <p class="eyebrow" data-reveal="fade">Third-Generation · Los Angeles</p>
-          <h1 class="display-xl">
-            <span class="headline-line" data-reveal="fade">A Family</span>
-            <span class="headline-line" data-reveal="fade">Name.</span>
-            <span class="headline-line headline-line--break" data-reveal="fade">A Family</span>
-            <span class="headline-line" data-reveal="fade">Kitchen.</span>
-          </h1>
-          <p class="lead" data-reveal="fade">Multicourse plated dinners. Omakase counters. Sushi service for homes, events, and occasions across Los Angeles.</p>
-          <div class="hero__ctas" data-reveal="fade">
-            <a href="#inquire" class="btn btn--primary" data-cursor="large">Begin an Inquiry <span class="arrow">&rarr;</span></a>
-            <a href="#gallery" class="btn btn--ghost" data-cursor="large">See the work</a>
+        <div class="hero__crest" aria-hidden="true">
+          <svg viewBox="0 0 200 240"><use href="#crest-use"/></svg>
+        </div>
+
+        <div class="hero__center">
+          <p class="hero__eyebrow" data-reveal>— The Flores Market —</p>
+          <h1 class="hero__title" data-reveal>Omakase.</h1>
+          <p class="hero__sub" data-reveal>By Reservation  ·  By Invitation</p>
+        </div>
+
+        <div class="hero__footer-line">
+          <span>Est. MMXX</span>
+          <span>Los Angeles</span>
+          <span>N° 01</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== STORY (Portrait split) ============================== -->
+    <section id="story" class="story">
+      <div class="story__image" aria-hidden="true">
+        <img src="/src/assets/images/chef-portrait-1280w.jpg" alt="Chef Marcus Flores, portrait." />
+      </div>
+      <div class="story__content">
+        <div>
+          <p class="eyebrow story__eyebrow" data-reveal>II — The Chef</p>
+          <h2 class="story__title" data-reveal>Marcus<br/>Flores.</h2>
+          <div class="story__body" data-reveal>
+            <p>The Flores Market is named for Bert Flores, a Los Angeles butcher whose shop was spared during the Watts riots because of how he treated his community. His grandson, Chef Marcus, named this kitchen in homage.</p>
+            <p>Trained through the Patina Restaurant Group — cooking at the Emmys, the Hollywood Bowl, and for former U.S. presidents — he now cooks one table at a time, by invitation.</p>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- ============================ HERITAGE ============================ -->
-    <section id="story" class="heritage" data-bg="paper">
-      <div class="heritage__inner">
-        <div class="heritage__stamp" data-parallax="0.7" aria-hidden="true">
-          <span>19</span><span>65</span>
-        </div>
-        <div class="heritage__body">
-          <div class="heritage__rule" data-reveal="scaleX"></div>
-          <p class="eyebrow heritage__eyebrow" data-reveal="fade">The Origin</p>
-          <h2 class="display-l heritage__headline" data-reveal="words">Named for Bert Flores.</h2>
-          <p data-reveal="fade">
-            Bert Flores opened his first butcher shop in Los Angeles. He came from a long line of butchers.
-            During the Watts riots, neighborhoods burned. Bert's shop did <em class="emphasis">not</em>.
-            He treated people in the community well, and that is why. That is the inheritance worth
-            a restaurant's name.
-          </p>
-          <p data-reveal="fade">
-            His grandson, Chef Marcus Flores, named this kitchen The Flores Market in homage &mdash;
-            to Bert, and to the butchers before him.
-          </p>
+        <div class="story__meta" data-reveal>
+          <div class="story__meta-row"><span>Based</span><span>Los Angeles</span></div>
+          <div class="story__meta-row"><span>Seatings per evening</span><span>One</span></div>
+          <div class="story__meta-row"><span>Kitchens run</span><span>Patina · Hollywood Bowl</span></div>
+          <div class="story__meta-row"><span>Available</span><span>By invitation</span></div>
         </div>
       </div>
     </section>
 
-    <!-- ============================== JOURNEY ============================ -->
-    <section id="journey" class="journey">
-      <div class="journey__inner">
-        <aside class="journey__aside">
-          <div class="journey__portrait">
-            <picture>
-              <source type="image/avif" srcset="/src/assets/images/chef-portrait-768w.avif 1x, /src/assets/images/chef-portrait-1280w.avif 2x" />
-              <source type="image/webp" srcset="/src/assets/images/chef-portrait-768w.webp 1x, /src/assets/images/chef-portrait-1280w.webp 2x" />
-              <img src="/src/assets/images/chef-portrait-768w.jpg" alt="Chef Marcus Flores in whites and a Flores Market snapback." />
-            </picture>
-          </div>
-        </aside>
-
-        <div class="journey__content">
-          <p class="eyebrow" data-reveal="fade">The Chef</p>
-          <h2 class="display-l journey__headline" data-reveal="words">From 2007 to Today.</h2>
-          <div class="journey__beats">
-            <article class="journey__beat" data-reveal="fade">
-              <span class="numeric">2007 · Culinary School</span>
-              <h3>First clients.</h3>
-              <p>In 2007, Chef Marcus Flores enrolled in culinary school. Before graduation, two private clients hired him as their personal chef &mdash; from word-of-mouth inside the kitchen where he trained.</p>
-            </article>
-            <article class="journey__beat" data-reveal="fade">
-              <span class="numeric">Patina Restaurant Group</span>
-              <h3>The LA stage.</h3>
-              <p>From there, he joined the Patina Restaurant Group &mdash; the group behind the Walt Disney Concert Hall dining program &mdash; and cooked through its restaurants and event operations.</p>
-            </article>
-            <article class="journey__beat" data-reveal="fade">
-              <span class="numeric">The Emmys</span>
-              <h3>Cooking for the stars.</h3>
-              <p>Inside Patina, he worked with the teams that fed the stars at the Emmys. During his time at the Hollywood Bowl he cooked for former U.S. presidents.</p>
-            </article>
-            <article class="journey__beat" data-reveal="fade">
-              <span class="numeric">Today</span>
-              <h3>The Flores Market.</h3>
-              <p>Today, The Flores Market cooks multicourse plated dinners, Omakase counters, and sushi service for private clients and events across Los Angeles. No two menus repeat. Every kitchen he runs, he still runs.</p>
-            </article>
-          </div>
+    <!-- ============================== EXPERIENCE (Index) ============================== -->
+    <section id="experience" class="experience">
+      <div class="experience__head">
+        <div>
+          <p class="eyebrow experience__eyebrow" data-reveal>N° III  ·  Experience</p>
+          <h2 class="experience__title" data-reveal>Three ways to sit<br/>at the table.</h2>
         </div>
+        <span class="experience__label" data-reveal>— By Invitation</span>
+      </div>
+
+      <div class="experience__list">
+        <article class="experience__item" data-reveal>
+          <div class="experience__numeral">I</div>
+          <h3 class="experience__item-title">Multicourse Dinner</h3>
+          <p class="experience__desc">A plated, coursed tasting written for the occasion. For private homes, intimate tables, and seated events.</p>
+          <div class="experience__detail">By  Quotation</div>
+        </article>
+        <article class="experience__item" data-reveal>
+          <div class="experience__numeral">II</div>
+          <h3 class="experience__item-title">Private Omakase</h3>
+          <p class="experience__desc">Chef's-choice counter service. Course by course, built around what is in season. Two to eight guests.</p>
+          <div class="experience__detail">By  Quotation</div>
+        </article>
+        <article class="experience__item" data-reveal>
+          <div class="experience__numeral">III</div>
+          <h3 class="experience__item-title">Events &amp; Catering</h3>
+          <p class="experience__desc">Weddings, milestones, and productions. Designed around the room, the guests, the occasion.</p>
+          <div class="experience__detail">By  Quotation</div>
+        </article>
       </div>
     </section>
 
-    <!-- ============================ PHILOSOPHY =========================== -->
-    <section id="philosophy" class="philosophy">
-      <div class="philosophy__inner">
-        <div class="philosophy__rule" data-reveal="scaleX"></div>
-        <blockquote class="pullquote" data-reveal="words">
-          &ldquo;The shop wasn't spared by luck. It was spared by how my grandfather treated people.&rdquo;
-          <cite style="display:block;margin-top:1em;font-style:normal;font-family:var(--ff-body);font-size:var(--fs-micro);letter-spacing:var(--track-micro);text-transform:uppercase;color:var(--brass);opacity:0.9;">&mdash; Chef Marcus Flores</cite>
-        </blockquote>
-        <div class="philosophy__rule" data-reveal="scaleX"></div>
-      </div>
-    </section>
-
-    <!-- ============================== SERVICES =========================== -->
-    <section id="services" class="services">
-      <div class="services__inner">
-        <div class="services__header">
-          <h2 class="display-l" data-reveal="words">What We Cook</h2>
-          <p data-reveal="fade">Four ways we cook. Every engagement is tailored for each individual occasion.</p>
-        </div>
-        <div class="services__grid">
-
-          <a class="service-card" href="#inquire" data-cursor="large">
-            <div class="service-card__media">
-              <picture>
-                <source type="image/avif" srcset="/src/assets/images/signature-nigiri-768w.avif 1x, /src/assets/images/signature-nigiri-1280w.avif 2x" />
-                <source type="image/webp" srcset="/src/assets/images/signature-nigiri-768w.webp 1x, /src/assets/images/signature-nigiri-1280w.webp 2x" />
-                <img src="/src/assets/images/signature-nigiri-768w.jpg" alt="" loading="lazy" />
-              </picture>
-            </div>
-            <div class="service-card__body">
-              <h3 class="service-card__title">Multicourse Dinners</h3>
-              <p class="service-card__desc">Plated, coursed, and served. For private homes, intimate tables, and seated events.</p>
-              <span class="service-card__arrow" aria-hidden="true">&rarr;</span>
-            </div>
-          </a>
-
-          <a class="service-card" href="#inquire" data-cursor="large">
-            <div class="service-card__media">
-              <picture>
-                <source type="image/avif" srcset="/src/assets/images/ikura-macro-768w.avif 1x, /src/assets/images/ikura-macro-1280w.avif 2x" />
-                <source type="image/webp" srcset="/src/assets/images/ikura-macro-768w.webp 1x, /src/assets/images/ikura-macro-1280w.webp 2x" />
-                <img src="/src/assets/images/ikura-macro-768w.jpg" alt="" loading="lazy" />
-              </picture>
-            </div>
-            <div class="service-card__body">
-              <h3 class="service-card__title">Omakase</h3>
-              <p class="service-card__desc">Chef's-choice counter service. Course by course. Built around what is in season.</p>
-              <span class="service-card__arrow" aria-hidden="true">&rarr;</span>
-            </div>
-          </a>
-
-          <a class="service-card" href="#inquire" data-cursor="large">
-            <div class="service-card__media">
-              <picture>
-                <source type="image/avif" srcset="/src/assets/images/crowned-nigiri-768w.avif 1x, /src/assets/images/crowned-nigiri-1234w.avif 2x" />
-                <source type="image/webp" srcset="/src/assets/images/crowned-nigiri-768w.webp 1x, /src/assets/images/crowned-nigiri-1234w.webp 2x" />
-                <img src="/src/assets/images/crowned-nigiri-768w.jpg" alt="" loading="lazy" />
-              </picture>
-            </div>
-            <div class="service-card__body">
-              <h3 class="service-card__title">Sushi Service</h3>
-              <p class="service-card__desc">Nigiri, sashimi, and maki, prepared on-site. For dinners, receptions, and standing events.</p>
-              <span class="service-card__arrow" aria-hidden="true">&rarr;</span>
-            </div>
-          </a>
-
-          <a class="service-card" href="#inquire" data-cursor="large">
-            <div class="service-card__media">
-              <picture>
-                <source type="image/avif" srcset="/src/assets/images/event-overhead-1280w.avif 1x, /src/assets/images/event-overhead-1920w.avif 2x" />
-                <source type="image/webp" srcset="/src/assets/images/event-overhead-1280w.webp 1x, /src/assets/images/event-overhead-1920w.webp 2x" />
-                <img src="/src/assets/images/event-overhead-1280w.jpg" alt="" loading="lazy" />
-              </picture>
-            </div>
-            <div class="service-card__body">
-              <h3 class="service-card__title">Events &amp; Private Catering</h3>
-              <p class="service-card__desc">Weddings, milestones, and productions. Designed around the room, the guests, the occasion.</p>
-              <span class="service-card__arrow" aria-hidden="true">&rarr;</span>
-            </div>
-          </a>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- =============================== GALLERY ============================ -->
+    <!-- ============================== GALLERY ============================== -->
     <section id="gallery" class="gallery">
-      <div class="gallery__inner">
-        <div class="gallery__header">
-          <h2 class="display-l" data-reveal="words">From Recent Kitchens</h2>
-          <p class="eyebrow" data-reveal="fade">Selected work</p>
+      <div class="gallery__head">
+        <div>
+          <p class="eyebrow gallery__eyebrow" data-reveal>N° IV  ·  A Quiet Portfolio</p>
+          <h2 class="gallery__title" data-reveal>Selected plates.</h2>
         </div>
-        <div class="gallery__grid" data-gallery>
-          <figure class="gallery__tile" data-cursor="large">
-            <picture>
-              <source type="image/avif" srcset="/src/assets/images/hero-sushi-platter-768w.avif 1x, /src/assets/images/hero-sushi-platter-1280w.avif 2x" />
-              <source type="image/webp" srcset="/src/assets/images/hero-sushi-platter-768w.webp 1x, /src/assets/images/hero-sushi-platter-1280w.webp 2x" />
-              <img src="/src/assets/images/hero-sushi-platter-768w.jpg" alt="" loading="lazy" />
-            </picture>
-          </figure>
-          <figure class="gallery__tile" data-cursor="large">
-            <picture>
-              <source type="image/avif" srcset="/src/assets/images/signature-nigiri-768w.avif 1x, /src/assets/images/signature-nigiri-1280w.avif 2x" />
-              <source type="image/webp" srcset="/src/assets/images/signature-nigiri-768w.webp 1x, /src/assets/images/signature-nigiri-1280w.webp 2x" />
-              <img src="/src/assets/images/signature-nigiri-768w.jpg" alt="" loading="lazy" />
-            </picture>
-          </figure>
-          <figure class="gallery__tile" data-cursor="large">
-            <picture>
-              <source type="image/avif" srcset="/src/assets/images/ikura-macro-768w.avif 1x, /src/assets/images/ikura-macro-1280w.avif 2x" />
-              <source type="image/webp" srcset="/src/assets/images/ikura-macro-768w.webp 1x, /src/assets/images/ikura-macro-1280w.webp 2x" />
-              <img src="/src/assets/images/ikura-macro-768w.jpg" alt="" loading="lazy" />
-            </picture>
-          </figure>
-          <figure class="gallery__tile" data-cursor="large">
-            <picture>
-              <source type="image/avif" srcset="/src/assets/images/crowned-nigiri-768w.avif 1x, /src/assets/images/crowned-nigiri-1234w.avif 2x" />
-              <source type="image/webp" srcset="/src/assets/images/crowned-nigiri-768w.webp 1x, /src/assets/images/crowned-nigiri-1234w.webp 2x" />
-              <img src="/src/assets/images/crowned-nigiri-768w.jpg" alt="" loading="lazy" />
-            </picture>
-          </figure>
-          <figure class="gallery__tile" data-cursor="large">
-            <picture>
-              <source type="image/avif" srcset="/src/assets/images/single-nigiri-detail-768w.avif 1x, /src/assets/images/single-nigiri-detail-1123w.avif 2x" />
-              <source type="image/webp" srcset="/src/assets/images/single-nigiri-detail-768w.webp 1x, /src/assets/images/single-nigiri-detail-1123w.webp 2x" />
-              <img src="/src/assets/images/single-nigiri-detail-768w.jpg" alt="" loading="lazy" />
-            </picture>
-          </figure>
-          <figure class="gallery__tile" data-cursor="large">
-            <picture>
-              <source type="image/avif" srcset="/src/assets/images/event-overhead-1280w.avif 1x, /src/assets/images/event-overhead-1920w.avif 2x" />
-              <source type="image/webp" srcset="/src/assets/images/event-overhead-1280w.webp 1x, /src/assets/images/event-overhead-1920w.webp 2x" />
-              <img src="/src/assets/images/event-overhead-1280w.jpg" alt="" loading="lazy" />
-            </picture>
-          </figure>
-        </div>
+        <a class="gallery__link" href="#inquire">Inquire  →</a>
+      </div>
+      <div class="gallery__grid">
+        <figure class="gallery__tile gallery__tile--tall" data-reveal>
+          <img src="/src/assets/images/crowned-nigiri-graded.jpg" alt="Crowned nigiri." loading="lazy" />
+        </figure>
+        <figure class="gallery__tile" data-reveal>
+          <img src="/src/assets/images/signature-nigiri-graded.jpg" alt="Signature nigiri on slate." loading="lazy" />
+        </figure>
+        <figure class="gallery__tile" data-reveal>
+          <img src="/src/assets/images/ikura-macro-graded.jpg" alt="Ikura macro." loading="lazy" />
+        </figure>
+        <figure class="gallery__tile" data-reveal>
+          <img src="/src/assets/images/single-nigiri-detail-graded.jpg" alt="Single nigiri detail." loading="lazy" />
+        </figure>
+        <figure class="gallery__tile" data-reveal>
+          <img src="/src/assets/images/event-overhead-graded.jpg" alt="Event table overhead." loading="lazy" />
+        </figure>
       </div>
     </section>
 
-    <!-- =============================== INQUIRY ============================ -->
+    <!-- ============================== INQUIRY (Letter) ============================== -->
     <section id="inquire" class="inquiry">
-      <div class="inquiry__inner">
-        <div class="inquiry__intro">
-          <p class="eyebrow" data-reveal="fade">Inquire</p>
-          <h2 class="display-l" data-reveal="words">No fixed menus. No fixed pricing.</h2>
-          <p class="lead" data-reveal="fade">Everything is tailored for each individual occasion. Share your date, your headcount, and what you have in mind &mdash; we'll reply with questions, menus, and pricing.</p>
+      <div>
+        <p class="eyebrow inquiry__eyebrow" data-reveal>N° V  ·  Inquire</p>
+        <h2 class="inquiry__title" data-reveal>Write to<br/>the chef.</h2>
+        <p class="inquiry__lead" data-reveal>The Flores Market accepts a small number of engagements each month. Share the occasion, the table, and a few words on what you are hoping to taste.</p>
+        <div class="inquiry__contact" data-reveal>
+          <div><a href="mailto:hello@thefloresmarket.com">hello@thefloresmarket.com</a></div>
+          <div>Los Angeles  ·  CA</div>
+          <div>Available for travel</div>
+        </div>
+      </div>
+
+      <form class="inquiry__form" data-form action="https://formspree.io/f/REPLACE_WITH_FORM_ID" method="POST" novalidate>
+        <div class="inquiry__field">
+          <label for="f-name">Your name</label>
+          <input id="f-name" name="name" type="text" required autocomplete="name" placeholder="———" />
+        </div>
+        <div class="inquiry__field">
+          <label for="f-email">Your email</label>
+          <input id="f-email" name="email" type="email" required autocomplete="email" placeholder="———" />
+        </div>
+        <div class="inquiry__field">
+          <label for="f-occasion">The occasion</label>
+          <input id="f-occasion" name="occasion" type="text" placeholder="———" />
+        </div>
+        <div class="inquiry__field">
+          <label for="f-date">Date  ·  Guests</label>
+          <input id="f-date" name="date_guests" type="text" placeholder="———" />
+        </div>
+        <div class="inquiry__field inquiry__field--block">
+          <label for="f-notes">A few words</label>
+          <textarea id="f-notes" name="notes" rows="4" placeholder="——————————————"></textarea>
         </div>
 
-        <form class="inquiry__form" data-form action="https://formspree.io/f/REPLACE_WITH_FORM_ID" method="POST" novalidate>
-          <div class="field__row">
-            <div class="field">
-              <label class="field__label" for="f-name">Name</label>
-              <input class="field__input" id="f-name" name="name" type="text" required autocomplete="name" />
-            </div>
-            <div class="field">
-              <label class="field__label" for="f-email">Email</label>
-              <input class="field__input" id="f-email" name="email" type="email" required autocomplete="email" />
-            </div>
-          </div>
+        <!-- Honeypot -->
+        <div class="inquiry__honey" aria-hidden="true">
+          <label for="f-website">Website</label>
+          <input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off" />
+        </div>
 
-          <div class="field__row">
-            <div class="field">
-              <label class="field__label" for="f-phone">Phone</label>
-              <input class="field__input" id="f-phone" name="phone" type="tel" autocomplete="tel" />
-            </div>
-            <div class="field">
-              <label class="field__label" for="f-date">Date of event</label>
-              <input class="field__input" id="f-date" name="event_date" type="date" />
-            </div>
-          </div>
-
-          <div class="field__row">
-            <div class="field">
-              <label class="field__label" for="f-guests">Headcount</label>
-              <input class="field__input" id="f-guests" name="headcount" type="number" min="1" inputmode="numeric" />
-            </div>
-            <div class="field">
-              <label class="field__label" for="f-service">Service interest</label>
-              <select class="field__select" id="f-service" name="service">
-                <option value="">Select</option>
-                <option>Multicourse plated dinner</option>
-                <option>Omakase</option>
-                <option>Sushi experience</option>
-                <option>Private event</option>
-                <option>Not sure yet</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="field">
-            <label class="field__label" for="f-notes">Notes</label>
-            <textarea class="field__textarea" id="f-notes" name="notes" rows="5" placeholder="Anything we should know &mdash; guests, dietary, tone, venue."></textarea>
-          </div>
-
-          <!-- Honeypot anti-spam -->
-          <div class="field field--honey" aria-hidden="true">
-            <label for="f-website">Website</label>
-            <input id="f-website" name="website" type="text" tabindex="-1" autocomplete="off" />
-          </div>
-
-          <button class="submit" type="submit">Send inquiry</button>
-          <p class="form__status" data-form-status role="status" aria-live="polite"></p>
-        </form>
-      </div>
+        <div class="inquiry__submit">
+          <button type="submit">Send Letter  →</button>
+        </div>
+        <p class="inquiry__status" data-form-status role="status" aria-live="polite"></p>
+      </form>
     </section>
 
   </main>
 
-  <!-- =============================== FOOTER ============================== -->
+  <!-- ============================== FOOTER (Quiet) ============================== -->
   <footer class="footer">
-    <div class="footer__inner">
-      <div class="footer__brand">
-        <svg viewBox="0 0 200 240" width="36" height="43"><use href="#crest-use"/></svg>
-        <span class="nav__wordmark">The Flores Market</span>
+    <div class="footer__grid">
+      <div class="footer__brand-col">
+        <div class="footer__crest" aria-hidden="true">
+          <svg viewBox="0 0 200 240"><use href="#crest-use"/></svg>
+        </div>
+        <div class="footer__wordmark">THE<br/>FLORES<br/>MARKET</div>
       </div>
-
-      <div class="footer__cols">
-        <div class="footer__col">
-          <h4>Contact</h4>
-          <a href="mailto:hello@thefloresmarket.com">hello@thefloresmarket.com</a>
-          <p>Los Angeles, California</p>
-        </div>
-        <div class="footer__col">
-          <h4>Follow</h4>
-          <a href="https://www.instagram.com/thefloresmarket" target="_blank" rel="noopener">@thefloresmarket</a>
-          <a href="https://www.instagram.com/marcutio10" target="_blank" rel="noopener">@marcutio10</a>
-        </div>
-        <div class="footer__col">
-          <h4>Service Area</h4>
-          <p>Los Angeles</p>
-          <p>Available for travel</p>
+      <div>
+        <div class="footer__col-head">The Practice</div>
+        <div class="footer__col-list">
+          <div><a href="#story">Story</a></div>
+          <div><a href="#experience">Experience</a></div>
+          <div><a href="#gallery">Gallery</a></div>
         </div>
       </div>
-
-      <div class="footer__rule" aria-hidden="true"></div>
-
-      <div class="footer__legal">
-        <span>A Family Name · Los Angeles</span>
-        <span>© 2026 The Flores Market · Chef Marcus Flores</span>
+      <div>
+        <div class="footer__col-head">Visit</div>
+        <div class="footer__col-list">
+          <div><a href="#inquire">Inquire</a></div>
+          <div><a href="#experience">Private Dining</a></div>
+          <div><a href="#experience">Events</a></div>
+        </div>
+      </div>
+      <div>
+        <div class="footer__col-head">Elsewhere</div>
+        <div class="footer__col-list">
+          <div><a href="https://www.instagram.com/thefloresmarket" target="_blank" rel="noopener">Instagram</a></div>
+          <div><a href="https://www.instagram.com/marcutio10" target="_blank" rel="noopener">@marcutio10</a></div>
+          <div><a href="mailto:hello@thefloresmarket.com">Contact</a></div>
+        </div>
       </div>
     </div>
+    <div class="footer__legal">
+      <span>© MMXXVI — The Flores Market</span>
+      <span>All rights, quietly, reserved</span>
+      <span>N° 01 / Flores</span>
+    </div>
   </footer>
-
-  <!-- Custom cursor -->
-  <div class="cursor" data-cursor-root aria-hidden="true"></div>
-  <!-- Grain overlay (P6 paints it) -->
-  <canvas class="grain" data-grain aria-hidden="true"></canvas>
 
   <script type="module" src="/src/scripts/main.js"></script>
 </body>
