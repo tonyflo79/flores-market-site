@@ -19,19 +19,61 @@ img { display: block; max-width: 100%; height: auto; }
 a { color: inherit; text-decoration: none; }
 button { cursor: pointer; font: inherit; }
 
-/* Fade-in reveal primitive */
+/* Fade-in reveal primitive (text default) */
 [data-reveal] {
   opacity: 0;
-  transform: translateY(12px);
+  transform: translateY(24px);
   transition: opacity var(--dur-fade) var(--ease-soft),
               transform var(--dur-fade) var(--ease-soft);
+  transition-delay: var(--reveal-delay, 0ms);
 }
 [data-reveal].is-visible {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Variant: image clip-path reveal (unveils from top) */
+[data-reveal="image"] {
+  opacity: 1;
+  transform: none;
+  clip-path: inset(0 0 100% 0);
+  transition: clip-path var(--dur-image) var(--ease-soft);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+[data-reveal="image"].is-visible {
+  clip-path: inset(0 0 0 0);
+}
+
+/* Variant: zoom — base fade+translate PLUS inner img scale */
+[data-reveal="zoom"] img {
+  transform: scale(1.08);
+  transition: transform var(--dur-image) var(--ease-soft);
+  transition-delay: var(--reveal-delay, 0ms);
+}
+[data-reveal="zoom"].is-visible img {
+  transform: scale(1);
+}
+
+/* Staggered cascades */
+.hero__center > [data-reveal]:nth-of-type(1) { --reveal-delay: 120ms; }
+.hero__center > [data-reveal]:nth-of-type(2) { --reveal-delay: 340ms; }
+.hero__center > [data-reveal]:nth-of-type(3) { --reveal-delay: 560ms; }
+
+.experience__list .experience__item[data-reveal]:nth-child(1) { --reveal-delay: 0ms; }
+.experience__list .experience__item[data-reveal]:nth-child(2) { --reveal-delay: 200ms; }
+.experience__list .experience__item[data-reveal]:nth-child(3) { --reveal-delay: 400ms; }
+
+.gallery__grid .gallery__tile[data-reveal]:nth-child(1) { --reveal-delay: 0ms; }
+.gallery__grid .gallery__tile[data-reveal]:nth-child(2) { --reveal-delay: 90ms; }
+.gallery__grid .gallery__tile[data-reveal]:nth-child(3) { --reveal-delay: 180ms; }
+.gallery__grid .gallery__tile[data-reveal]:nth-child(4) { --reveal-delay: 270ms; }
+.gallery__grid .gallery__tile[data-reveal]:nth-child(5) { --reveal-delay: 360ms; }
+.gallery__grid .gallery__tile[data-reveal]:nth-child(6) { --reveal-delay: 450ms; }
+
 @media (prefers-reduced-motion: reduce) {
   [data-reveal] { opacity: 1; transform: none; transition: none; }
+  [data-reveal="image"] { clip-path: none; transition: none; }
+  [data-reveal="zoom"] img { transform: none; transition: none; }
 }
 
 /* Utility: eyebrow small-caps label */

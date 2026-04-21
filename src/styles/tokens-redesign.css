@@ -50,7 +50,8 @@
   --section-gap: 140px;
 
   /* ---------- MOTION ---------- */
-  --dur-fade: 700ms;
+  --dur-fade: 1000ms;
+  --dur-image: 1400ms;
   --ease-soft: cubic-bezier(0.2, 0.8, 0.2, 1);
 
   /* ---------- Z-INDEX ---------- */
