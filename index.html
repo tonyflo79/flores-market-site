@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="theme-color" content="#14110F" />
-  <title>The Flores Market — Private Catering by Chef Marcus Flores</title>
-  <meta name="description" content="Private catering by Chef Marcus Flores. Multicourse dinners, omakase, and sushi service for private tables and events across Los Angeles. By invitation." />
+  <title>The Flores Market — Private Cooking by Chef Marcus Flores</title>
+  <meta name="description" content="Private cooking by Chef Marcus Flores. Multicourse dinners, omakase, and sushi service for private tables and events across Los Angeles, Long Beach, and Orange County. By invitation." />
 
   <meta property="og:title" content="The Flores Market" />
   <meta property="og:description" content="Private catering by Chef Marcus Flores. By invitation." />
@@ -26,7 +26,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..500,30..100;1,9..144,300..500,30..100&family=Inter:wght@300;400;500&display=swap" />
 
-  <link rel="preload" as="image" href="/src/assets/images/crowned-nigiri-graded.jpg" />
+  <link rel="preload" as="image" href="/src/assets/images/hero-main.jpg" />
   <link rel="stylesheet" href="/src/styles/main.css" />
 </head>
 <body>
@@ -71,7 +71,10 @@
     <!-- ============================== HERO (Centered) ============================== -->
     <section id="top" class="hero">
       <div class="hero__media" aria-hidden="true">
-        <img src="/src/assets/images/crowned-nigiri-graded.jpg" alt="" fetchpriority="high" />
+        <picture>
+          <source media="(max-width: 767px)" srcset="/src/assets/images/hero-main-768.jpg" />
+          <img src="/src/assets/images/hero-main.jpg" alt="" fetchpriority="high" />
+        </picture>
       </div>
       <div class="hero__overlay" aria-hidden="true"></div>
 
@@ -82,13 +85,13 @@
 
         <div class="hero__center">
           <p class="hero__eyebrow" data-reveal>— The Flores Market —</p>
-          <h1 class="hero__title" data-reveal>Omakase.</h1>
+          <h1 class="hero__title" data-reveal>Private Cooking.</h1>
           <p class="hero__sub" data-reveal>By Reservation  ·  By Invitation</p>
         </div>
 
         <div class="hero__footer-line">
-          <span>Est. MMXX</span>
-          <span>Los Angeles</span>
+          <span>Est. 2017</span>
+          <span>Los Angeles &amp; Orange County</span>
           <span>N° 01</span>
         </div>
       </div>
@@ -97,7 +100,10 @@
     <!-- ============================== STORY (Portrait split) ============================== -->
     <section id="story" class="story">
       <div class="story__image" aria-hidden="true">
-        <img src="/src/assets/images/chef-portrait-1280w.jpg" alt="Chef Marcus Flores, portrait." />
+        <picture>
+          <source media="(max-width: 767px)" srcset="/src/assets/images/chef-portrait-new-768.jpg" />
+          <img src="/src/assets/images/chef-portrait-new.jpg" alt="Chef Marcus Flores in the kitchen." />
+        </picture>
       </div>
       <div class="story__content">
         <div>
@@ -166,13 +172,40 @@
           <img src="/src/assets/images/signature-nigiri-graded.jpg" alt="Signature nigiri on slate." loading="lazy" />
         </figure>
         <figure class="gallery__tile" data-reveal>
+          <img src="/src/assets/images/gallery-4300.jpg" alt="Knife slicing fish." loading="lazy" />
+        </figure>
+        <figure class="gallery__tile" data-reveal>
           <img src="/src/assets/images/ikura-macro-graded.jpg" alt="Ikura macro." loading="lazy" />
+        </figure>
+        <figure class="gallery__tile" data-reveal>
+          <img src="/src/assets/images/gallery-4302.jpg" alt="Nigiri with wasabi." loading="lazy" />
+        </figure>
+        <figure class="gallery__tile" data-reveal>
+          <img src="/src/assets/images/gallery-4295.jpg" alt="Plated dessert course." loading="lazy" />
         </figure>
         <figure class="gallery__tile" data-reveal>
           <img src="/src/assets/images/single-nigiri-detail-graded.jpg" alt="Single nigiri detail." loading="lazy" />
         </figure>
         <figure class="gallery__tile" data-reveal>
+          <img src="/src/assets/images/gallery-4298.jpg" alt="Hand shaping sushi." loading="lazy" />
+        </figure>
+        <figure class="gallery__tile" data-reveal>
           <img src="/src/assets/images/event-overhead-graded.jpg" alt="Event table overhead." loading="lazy" />
+        </figure>
+        <figure class="gallery__tile" data-reveal>
+          <img src="/src/assets/images/gallery-4301.jpg" alt="Chef plating the course." loading="lazy" />
+        </figure>
+        <figure class="gallery__tile" data-reveal>
+          <img src="/src/assets/images/gallery-4304.jpg" alt="Torching the dish." loading="lazy" />
+        </figure>
+        <figure class="gallery__tile" data-reveal>
+          <img src="/src/assets/images/gallery-4297.jpg" alt="Chef at the prep station." loading="lazy" />
+        </figure>
+        <figure class="gallery__tile" data-reveal>
+          <img src="/src/assets/images/chef-portrait-1280w.jpg" alt="Chef portrait in the kitchen." loading="lazy" />
+        </figure>
+        <figure class="gallery__tile" data-reveal>
+          <img src="/src/assets/images/gallery-4296.jpg" alt="Chef plating oysters." loading="lazy" />
         </figure>
       </div>
     </section>
@@ -184,8 +217,9 @@
         <h2 class="inquiry__title" data-reveal>Write to<br/>the chef.</h2>
         <p class="inquiry__lead" data-reveal>The Flores Market accepts a small number of engagements each month. Share the occasion, the table, and a few words on what you are hoping to taste.</p>
         <div class="inquiry__contact" data-reveal>
-          <div><a href="mailto:hello@thefloresmarket.com">hello@thefloresmarket.com</a></div>
-          <div>Los Angeles  ·  CA</div>
+          <div><a href="mailto:chefmarcusalexander@gmail.com">chefmarcusalexander@gmail.com</a></div>
+          <div><a href="tel:+19493339317">949 · 333 · 9317</a></div>
+          <div>Los Angeles  ·  Long Beach  ·  Orange County, CA</div>
           <div>Available for travel</div>
         </div>
       </div>
@@ -257,7 +291,7 @@
         <div class="footer__col-list">
           <div><a href="https://www.instagram.com/thefloresmarket" target="_blank" rel="noopener">Instagram</a></div>
           <div><a href="https://www.instagram.com/marcutio10" target="_blank" rel="noopener">@marcutio10</a></div>
-          <div><a href="mailto:hello@thefloresmarket.com">Contact</a></div>
+          <div><a href="mailto:chefmarcusalexander@gmail.com">Contact</a></div>
         </div>
       </div>
     </div>
